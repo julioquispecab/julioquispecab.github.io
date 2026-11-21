@@ -11,6 +11,13 @@
 
   if (!form || !promptInput || !boton) return;
 
+  Array.prototype.forEach.call(document.querySelectorAll('.idea'), function (idea) {
+    idea.addEventListener('click', function () {
+      promptInput.value = idea.getAttribute('data-prompt') || '';
+      promptInput.focus();
+    });
+  });
+
   function mostrarEstado(texto, esError) {
     estado.textContent = texto || '';
     estado.className = 'estado' + (esError ? ' estado-error' : '');

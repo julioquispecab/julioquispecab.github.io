@@ -1,111 +1,201 @@
-/* styles.css */
+/* Creativa IA · estilos */
+:root {
+    --tinta: #161a23;
+    --tinta-suave: #5b6472;
+    --acento: #4f46e5;
+    --acento-oscuro: #3f37c9;
+    --fondo: #f4f6fb;
+    --borde: #e2e6ef;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: var(--fondo);
+    color: var(--tinta);
+    line-height: 1.55;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    width: 100%;
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-header {
-    background-color: #333;
+/* Encabezado */
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 22px 0 10px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--acento), #8b5cf6);
     color: #fff;
-    padding: 20px;
-    text-align: center;
+    font-weight: bold;
 }
 
+.brand-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+}
+
+.brand-tagline {
+    margin: 0;
+    color: var(--tinta-suave);
+    font-size: 0.9rem;
+}
+
+/* Presentación */
 main {
     flex: 1;
-    padding: 20px;
 }
 
-main section {
-    margin-bottom: 20px;
+.hero {
+    padding: 34px 0 8px;
+    max-width: 720px;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
+.hero h1 {
+    font-size: 2.1rem;
+    line-height: 1.2;
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
 }
 
-footer nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
+.hero-text {
+    margin: 0;
+    color: var(--tinta-suave);
+    font-size: 1.05rem;
 }
 
-footer nav a:hover {
-    text-decoration: underline;
-}
-
-/* Generador de imágenes a partir de texto */
+/* Generador */
 .generador {
     background-color: #fff;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    margin: 26px 0;
+    padding: 26px;
+    border: 1px solid var(--borde);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(22, 26, 35, 0.06);
 }
 
 .generador h2 {
-    margin-top: 0;
-    color: #333;
-    font-size: 1.3rem;
+    margin: 0 0 16px;
+    font-size: 1.25rem;
 }
 
-.generador-ayuda {
-    color: #555;
-    margin-top: 0;
+.campo-etiqueta {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--tinta-suave);
+    margin-bottom: 6px;
 }
 
 #form-generador {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 #prompt-imagen {
     width: 100%;
-    box-sizing: border-box;
-    padding: 10px;
+    padding: 12px;
     font-family: inherit;
     font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    color: var(--tinta);
+    border: 1px solid var(--borde);
+    border-radius: 10px;
     resize: vertical;
+    background-color: #fbfcfe;
+}
+
+#prompt-imagen:focus {
+    outline: 2px solid var(--acento);
+    outline-offset: 1px;
+    background-color: #fff;
+}
+
+.ideas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.ideas-titulo {
+    font-size: 0.85rem;
+    color: var(--tinta-suave);
+}
+
+.idea {
+    background-color: #eef0fb;
+    color: var(--acento-oscuro);
+    border: 1px solid #dfe2f8;
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.idea:hover {
+    background-color: #e2e6fb;
 }
 
 #boton-generar {
     align-self: flex-start;
-    background-color: #333;
+    background-color: var(--acento);
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 1rem;
-    border-radius: 4px;
+    font-weight: bold;
+    border-radius: 10px;
     cursor: pointer;
 }
 
 #boton-generar:hover:not(:disabled) {
-    background-color: #555;
+    background-color: var(--acento-oscuro);
 }
 
 #boton-generar:disabled {
-    background-color: #999;
+    background-color: #a9a9c9;
     cursor: wait;
 }
 
 .estado {
     min-height: 1.2em;
-    color: #555;
-    margin: 12px 0 0;
+    color: var(--tinta-suave);
+    margin: 14px 0 0;
+    font-size: 0.95rem;
 }
 
 .estado-error {
@@ -117,28 +207,89 @@ footer nav a:hover {
 }
 
 .resultado {
-    margin-top: 16px;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid var(--borde);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 14px;
 }
 
 #imagen-generada {
-    max-width: 100%;
+    width: 100%;
+    max-width: 420px;
     height: auto;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 12px;
+    border: 1px solid var(--borde);
 }
 
 .descarga {
     color: #fff;
-    background-color: #333;
+    background-color: var(--tinta);
     text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 4px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
 }
 
 .descarga:hover {
-    background-color: #555;
+    background-color: #2b3140;
+}
+
+/* Beneficios */
+.beneficios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 10px 0 30px;
+}
+
+.beneficio {
+    background-color: #fff;
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    padding: 18px;
+}
+
+.beneficio h3 {
+    margin: 0 0 6px;
+    font-size: 1rem;
+}
+
+.beneficio p {
+    margin: 0;
+    color: var(--tinta-suave);
+    font-size: 0.92rem;
+}
+
+/* Pie */
+footer {
+    border-top: 1px solid var(--borde);
+    padding: 18px 0 26px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    color: var(--tinta-suave);
+    font-size: 0.88rem;
+}
+
+@media (max-width: 760px) {
+    .hero {
+        padding-top: 22px;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .generador {
+        padding: 18px;
+    }
+
+    .beneficios {
+        grid-template-columns: 1fr;
+    }
 }
