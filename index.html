@@ -3,65 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="estilo.css">
-    <title>SITEMAS OPERATIVOS</title>
+    <title>Creativa IA · Imágenes para marketing</title>
 
+    <meta name="title" content="Creativa IA · Imágenes para marketing" />
+    <meta name="description" content="Genera imágenes para tus campañas de marketing escribiendo una idea: publicaciones para redes, banners de ofertas y anuncios." />
 
-    <!-- Primary Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Creativa IA · Imágenes para marketing" />
+    <meta property="og:description" content="Escribe tu idea y descarga la imagen lista para tu campaña." />
 
-<meta name="title" content="VIDEOS TUTORIALES DEL SISTEMA OPERTATIVO WINDOWS 11" />
-<meta name="description" content="VIDEOS TUTORIALES DEL SISTEMA OPERTATIVO WINDOWS 11" />
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://julioquispecab.github.io/" />
-<meta property="og:title" content="SISTEMAS OPERATIVOS 2024-1" />
-<meta property="og:description" content="VIDEOS TUTORIALES DEL SISTEMA OPERTATIVO WINDOWS 11" />
-<meta property="og:image" content="https://julioquispecab.github.io/images/ws.jpg" />
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="https://www.sistemasoperativos.com/" />
-<meta property="twitter:title" content="SISTEMAS OPERATIVOS 2024-1" />
-<meta property="twitter:description" content="VIDEOS TUTORIALES DEL SISTEMA OPERTATIVO WINDOWS 11" />
-<meta property="twitter:image" content="https://julioquispecab.github.io/images/ws.jpg" />
-
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Creativa IA · Imágenes para marketing" />
+    <meta property="twitter:description" content="Escribe tu idea y descarga la imagen lista para tu campaña." />
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>VIDEOS TUTORIALES DEL SISTEMA OPERTATIVO WINDOWS 11</h1>
+        <header class="site-header">
+            <div class="brand">
+                <span class="brand-mark">C</span>
+                <span class="brand-name">Creativa IA</span>
+            </div>
+            <p class="brand-tagline">Imágenes de marketing en segundos</p>
         </header>
-        
-        <div class="video-container">
-            <div class="video-item">
-                <center><h2>INSTALACION DE WS 11 EN UNA MÁQUINA VIRTUAL</h2></center>
-                <center><iframe width="560" height="315" src="https://www.youtube.com/embed/9hQV-BsuXoY?si=2jXycKKV12sHmHQt"
-                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
-            </div>
-            <div class="video-item">
-                <center><h2>INSTALACIÓN DEL PROGRAMA - BULCK CRAP</h2></center>
-                <center><iframe width="560" height="315" src="https://www.youtube.com/embed/wh7wFfXarG8?si=87CbneDoomaHf2UA" 
-                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
-            </div>
-            <div class="video-item">
-                <center><h2>CONFIGURACIÓN DE WINDOWS HELLO (WS 11)</h2></center>
-                <center><iframe width="560" height="315" src="https://www.youtube.com/embed/pLBJbisfCVw?si=d4zNACJEQeGu62u8" 
-                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
-                
-            </div>
-        
-        </div>
+
+        <main>
+            <section class="hero">
+                <h1>Genera las imágenes de tu campaña escribiendo una idea</h1>
+                <p class="hero-text">
+                    Publicaciones para redes, banners de oferta y anuncios: describe lo que necesitas,
+                    genera la imagen y descárgala lista para publicar.
+                </p>
+            </section>
+
+            <section class="generador" aria-labelledby="titulo-generador">
+                <h2 id="titulo-generador">¿Qué imagen necesitas?</h2>
+                <form id="form-generador">
+                    <label class="campo-etiqueta" for="prompt-imagen">Describe tu imagen</label>
+                    <textarea id="prompt-imagen" name="prompt" rows="3" maxlength="2000"
+                        placeholder="Ejemplo: publicación de Instagram para una cafetería de especialidad, tonos cálidos, estilo fotográfico"></textarea>
+
+                    <div class="ideas">
+                        <span class="ideas-titulo">Ideas rápidas:</span>
+                        <button type="button" class="idea" data-prompt="Publicación de Instagram para una cafetería de especialidad, tonos cálidos, estilo fotográfico">Post para Instagram</button>
+                        <button type="button" class="idea" data-prompt="Banner de oferta 2x1 en ropa deportiva, fondo degradado vibrante, texto grande y claro">Banner de oferta</button>
+                        <button type="button" class="idea" data-prompt="Anuncio para Facebook de zapatillas urbanas, producto en primer plano, fondo minimalista en tonos pastel">Anuncio de producto</button>
+                        <button type="button" class="idea" data-prompt="Portada para LinkedIn sobre estrategia de marketing digital, estilo corporativo moderno, colores azules">Portada de LinkedIn</button>
+                    </div>
+
+                    <button id="boton-generar" type="submit">Generar imagen</button>
+                </form>
+
+                <p id="estado-generador" class="estado" role="status" aria-live="polite"></p>
+
+                <div id="resultado-generador" class="resultado" hidden>
+                    <img id="imagen-generada" alt="" width="512" height="512">
+                    <a id="descargar-imagen" class="descarga" href="#" download>Descargar imagen</a>
+                </div>
+            </section>
+
+            <section class="beneficios">
+                <div class="beneficio">
+                    <h3>Sin equipo de diseño</h3>
+                    <p>Una idea escrita es suficiente para tener la pieza gráfica.</p>
+                </div>
+                <div class="beneficio">
+                    <h3>Lista para tus redes</h3>
+                    <p>Formato cuadrado ideal para publicaciones y anuncios.</p>
+                </div>
+                <div class="beneficio">
+                    <h3>Descarga inmediata</h3>
+                    <p>Guarda la imagen en PNG y úsala en tu campaña.</p>
+                </div>
+            </section>
+        </main>
+
         <footer>
-            <center><p>ESTUDIANTE: JULIO VIDAL QUISPE CABANA</p></center>
-            <center><P>INGENIERO: JULIO GENARO MELENDEZ RAMOS</P></center>
-            <center><P>&copy;UPSJB, 2024</P></center>
-            
-        
+            <p>Creativa IA · Imágenes generadas con inteligencia artificial para tus campañas</p>
         </footer>
     </div>
+    <script src="generador.js"></script>
 </body>
 </html>

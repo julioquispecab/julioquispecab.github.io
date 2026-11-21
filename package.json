@@ -1,0 +1,13 @@
+{
+  "name": "creativa-ia",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Generador de imágenes de marketing a partir de texto",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
