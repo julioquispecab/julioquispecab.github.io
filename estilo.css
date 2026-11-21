@@ -44,3 +44,101 @@ footer nav a {
 footer nav a:hover {
     text-decoration: underline;
 }
+
+/* Generador de imágenes a partir de texto */
+.generador {
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.generador h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.3rem;
+}
+
+.generador-ayuda {
+    color: #555;
+    margin-top: 0;
+}
+
+#form-generador {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#prompt-imagen {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+#boton-generar {
+    align-self: flex-start;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#boton-generar:hover:not(:disabled) {
+    background-color: #555;
+}
+
+#boton-generar:disabled {
+    background-color: #999;
+    cursor: wait;
+}
+
+.estado {
+    min-height: 1.2em;
+    color: #555;
+    margin: 12px 0 0;
+}
+
+.estado-error {
+    color: #b00020;
+}
+
+.resultado[hidden] {
+    display: none;
+}
+
+.resultado {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+#imagen-generada {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.descarga {
+    color: #fff;
+    background-color: #333;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.descarga:hover {
+    background-color: #555;
+}

@@ -32,7 +32,22 @@
         <header>
             <h1>VIDEOS TUTORIALES DEL SISTEMA OPERTATIVO WINDOWS 11</h1>
         </header>
-        
+
+        <section class="generador">
+            <h2>CREA UNA IMAGEN A PARTIR DE UN TEXTO</h2>
+            <p class="generador-ayuda">Describe lo que quieres ver y el sistema generará la imagen.</p>
+            <form id="form-generador">
+                <textarea id="prompt-imagen" name="prompt" rows="3" maxlength="2000"
+                    placeholder="Ejemplo: un aula de computadoras con laptops modernas, estilo ilustración"></textarea>
+                <button id="boton-generar" type="submit">Generar imagen</button>
+            </form>
+            <p id="estado-generador" class="estado" role="status" aria-live="polite"></p>
+            <div id="resultado-generador" class="resultado" hidden>
+                <img id="imagen-generada" alt="" width="512" height="512">
+                <a id="descargar-imagen" class="descarga" href="#" download>Descargar imagen</a>
+            </div>
+        </section>
+
         <div class="video-container">
             <div class="video-item">
                 <center><h2>INSTALACION DE WS 11 EN UNA MÁQUINA VIRTUAL</h2></center>
@@ -63,5 +78,6 @@
         
         </footer>
     </div>
+    <script src="generador.js"></script>
 </body>
 </html>
